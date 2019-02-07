@@ -13,15 +13,13 @@ export function reducer(state: Post[] = [initialState], action: PostActions.Acti
       return [...state, action.payload];
     }
     case PostActions.POST_ACTIONS.REMOVE_POST: {
-      state = [
+      return [
         ...state.slice(0, action.payload),
         ...state.slice(action.payload + 1)
       ];
-      return state;
     }
     case PostActions.POST_ACTIONS.SET_POSTS: {
-      state = action.payload;
-      return state;
+      return action.payload;
     }
     default: {
       return state;
