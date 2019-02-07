@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Store} from '@ngrx/store';
+import {AppState} from './app.state';
+import * as PostActions from './actions/post.actions';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ReduxExample';
+
+  constructor(private store: Store<AppState>) {
+    this.store.dispatch(new PostActions.LoadPosts());
+  }
 }

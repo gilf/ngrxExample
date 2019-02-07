@@ -1,0 +1,10 @@
+<div class="right" *ngIf="posts">
+  <h3>Posts</h3>
+  <ul>
+    <li *ngFor="let post of posts | async; let i = index">
+      <h3 (click)="removePost(i)">{{post.name}}</h3>
+      <div>{{post.content}}</div>
+      <a [href]="post.url" target="_blank">{{ post.name }}</a>
+    </li>
+  </ul>
+</div>

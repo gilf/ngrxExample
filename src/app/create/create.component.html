@@ -1,0 +1,8 @@
+<div class="left">
+
+  <input type="text" placeholder="name" #name>
+  <textarea type="text" placeholder="content" #content></textarea>
+  <input type="text" placeholder="url" #url>
+
+  <button (click)="addPost(name.value, content.value, url.value)">Add a Post</button>
+</div>
