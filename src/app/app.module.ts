@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { PostEffects } from './effects/post.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     EffectsModule.forRoot([AppEffects, PostEffects])
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
