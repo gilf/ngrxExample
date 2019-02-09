@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Post } from '../models/Post';
 import { AppState } from '../app.state';
 import * as PostActions from '../actions/post.actions';
+import {selectPosts, selectPostsCount} from '../selectors/post.selectors';
 
 @Component({
   selector: 'app-read',
@@ -12,8 +13,10 @@ import * as PostActions from '../actions/post.actions';
 })
 export class ReadComponent implements OnInit {
   posts: Observable<Post[]>;
+  postCount: Observable<number>;
   constructor(private store: Store<AppState>) {
-    this.posts = store.select('posts');
+    this.posts = store.select(selectPosts);
+    this.postCount = store.select(selectPostsCount);
   }
 
   removePost(index) {
@@ -22,5 +25,4 @@ export class ReadComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

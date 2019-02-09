@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
   constructor(private store: Store<AppState>) { }
 
   addPost(name, content, url) {
@@ -20,5 +19,4 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { Action, createSelector } from '@ngrx/store';
 import { Post } from '../models/Post';
 
 /* Action names */
